@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Laravel\Jetstream\Rules\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +14,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            TypeUserSeeder::class,
+            ConfigPaymentSeeder::class,
+            SpecialistSeeder::class,
+            ConsultationSeeder::class,
+        ]);
     }
 }
